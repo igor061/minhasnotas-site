@@ -123,79 +123,39 @@
     }
     .btn-ghost:hover { background: rgba(10, 22, 40, 0.06); }
 
-    .receipt {
-      position: relative;
-      background: var(--sheet);
-      color: var(--ink);
-      padding: 1.4rem 1.25rem 1.6rem;
+    .hero-phone {
+      width: min(280px, 100%);
+      justify-self: end;
+      margin-inline: auto 0;
+      background: #111827;
+      border-radius: 28px;
+      padding: 10px;
       box-shadow:
-        0 18px 40px rgba(10, 22, 40, 0.14),
-        0 1px 0 rgba(255, 255, 255, 0.8) inset;
-      border: 1px solid var(--line);
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      font-size: 0.78rem;
-      line-height: 1.55;
+        0 24px 48px rgba(10, 22, 40, 0.22),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+      position: relative;
       animation: slideIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
-      clip-path: polygon(
-        0 0, 100% 0, 100% calc(100% - 10px),
-        98% 100%, 96% calc(100% - 10px), 94% 100%, 92% calc(100% - 10px),
-        90% 100%, 88% calc(100% - 10px), 86% 100%, 84% calc(100% - 10px),
-        82% 100%, 80% calc(100% - 10px), 78% 100%, 76% calc(100% - 10px),
-        74% 100%, 72% calc(100% - 10px), 70% 100%, 68% calc(100% - 10px),
-        66% 100%, 64% calc(100% - 10px), 62% 100%, 60% calc(100% - 10px),
-        58% 100%, 56% calc(100% - 10px), 54% 100%, 52% calc(100% - 10px),
-        50% 100%, 48% calc(100% - 10px), 46% 100%, 44% calc(100% - 10px),
-        42% 100%, 40% calc(100% - 10px), 38% 100%, 36% calc(100% - 10px),
-        34% 100%, 32% calc(100% - 10px), 30% 100%, 28% calc(100% - 10px),
-        26% 100%, 24% calc(100% - 10px), 22% 100%, 20% calc(100% - 10px),
-        18% 100%, 16% calc(100% - 10px), 14% 100%, 12% calc(100% - 10px),
-        10% 100%, 8% calc(100% - 10px), 6% 100%, 4% calc(100% - 10px),
-        2% 100%, 0 calc(100% - 10px)
-      );
     }
 
-    .receipt .head {
-      text-align: center;
-      font-weight: 500;
-      margin-bottom: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .receipt .rule {
-      border: none;
-      border-top: 1px dashed var(--line);
-      margin: 0.7rem 0;
-    }
-
-    .receipt .row {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .receipt .muted { color: var(--muted); }
-    .receipt .total { font-weight: 500; font-size: 0.95rem; }
-
-    .stamp {
+    .hero-phone::before {
+      content: "";
       position: absolute;
-      top: 1.1rem;
-      right: 0.9rem;
-      width: 4.4rem;
-      height: 4.4rem;
-      border: 2.5px solid var(--stamp);
-      color: var(--stamp);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      font-size: 0.58rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transform: rotate(12deg);
-      background: rgba(185, 28, 28, 0.04);
-      animation: stampIn 0.55s ease 0.55s both;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28%;
+      height: 8px;
+      background: #020617;
+      border-radius: 99px;
+      z-index: 3;
+    }
+
+    .hero-phone img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      background: #fafafa;
     }
 
     /* —— SECTIONS —— */
@@ -431,7 +391,7 @@
       }
       .hero { align-items: start; padding-top: 2rem; min-height: auto; }
       .feature-code { padding-top: 0; }
-      .receipt { margin-top: 0.5rem; max-width: 420px; }
+      .hero-phone { justify-self: start; margin: 0.5rem auto 0; width: min(260px, 100%); }
       .phone { transform: none !important; width: min(280px, 100%); }
       .phone-card:nth-child(2) .phone { transform: none; }
     }
@@ -456,42 +416,30 @@
         </div>
       </div>
 
-      <aside class="receipt" aria-hidden="true">
-        <div class="stamp">Nota<br />Legal<br />Ok</div>
-        <div class="head">DANFE NFC-e</div>
-        <div class="muted">Mercado Exemplo Ltda</div>
-        <div class="muted">CNPJ 00.000.000/0001-00</div>
-        <hr class="rule" />
-        <div class="row"><span>Banana prata KG</span><span>0,350</span></div>
-        <div class="row"><span>Café torrado</span><span>1</span></div>
-        <div class="row"><span>Leite 1L</span><span>2</span></div>
-        <hr class="rule" />
-        <div class="row total"><span>TOTAL</span><span>R$ 42,90</span></div>
-        <hr class="rule" />
-        <div class="muted">Categoria: Alimentação</div>
-        <div class="muted">Chave **** 5967 3285</div>
-      </aside>
+      <div class="hero-phone">
+        <img src="./screens/detalhe.png" alt="Tela Detalhes do MinhasNotas com cupom NFC-e, emitente e Nota Legal" width="390" height="844" />
+      </div>
     </div>
   </header>
 
   <section id="telas" class="mockups">
     <div class="wrap">
       <h2 class="section-title">Telas reais do app</h2>
-      <p class="section-lead">Capturas geradas direto do MinhasNotas — lista, detalhe e nova consulta.</p>
+      <p class="section-lead">Capturas geradas direto do MinhasNotas — detalhe, lista e nova consulta.</p>
 
       <div class="phones">
-        <figure class="phone-card">
-          <div class="phone">
-            <img src="./screens/lista.png" alt="Tela Documentos do MinhasNotas com lista de NFC-e, Nota Legal e categorias" width="390" height="844" loading="lazy" />
-          </div>
-          <figcaption>Lista de documentos</figcaption>
-        </figure>
-
         <figure class="phone-card">
           <div class="phone">
             <img src="./screens/detalhe.png" alt="Tela Detalhes do cupom com emitente, valores e Nota Legal" width="390" height="844" loading="lazy" />
           </div>
           <figcaption>Detalhe do cupom</figcaption>
+        </figure>
+
+        <figure class="phone-card">
+          <div class="phone">
+            <img src="./screens/lista.png" alt="Tela Documentos do MinhasNotas com lista de NFC-e, Nota Legal e categorias" width="390" height="844" loading="lazy" />
+          </div>
+          <figcaption>Lista de documentos</figcaption>
         </figure>
 
         <figure class="phone-card">
