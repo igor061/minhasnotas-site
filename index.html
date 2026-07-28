@@ -363,16 +363,295 @@
       to { opacity: 1; transform: rotate(12deg) scale(1); }
     }
 
+    /* —— PHONE MOCKUPS —— */
+    .mockups {
+      padding-top: 1rem;
+    }
+
+    .phones {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: end;
+      perspective: 1200px;
+    }
+
+    .phone-card {
+      text-align: center;
+    }
+
+    .phone-card figcaption {
+      margin-top: 0.9rem;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .phone {
+      --phone-w: 100%;
+      width: min(260px, 100%);
+      margin-inline: auto;
+      aspect-ratio: 9 / 19.2;
+      background: #111827;
+      border-radius: 28px;
+      padding: 10px;
+      box-shadow:
+        0 24px 48px rgba(10, 22, 40, 0.22),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+      position: relative;
+      transform: rotateY(-6deg) rotateX(2deg);
+      transition: transform 0.35s ease;
+    }
+
+    .phone-card:nth-child(2) .phone { transform: rotateY(0deg) translateY(-12px); }
+    .phone-card:nth-child(3) .phone { transform: rotateY(6deg) rotateX(2deg); }
+    .phone-card:hover .phone { transform: rotateY(0) translateY(-6px); }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28%;
+      height: 8px;
+      background: #020617;
+      border-radius: 99px;
+      z-index: 3;
+    }
+
+    .screen {
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      text-align: left;
+      color: #1a1a1a;
+    }
+
+    .appbar {
+      background: #673ab7;
+      color: #fff;
+      padding: 1.35rem 0.75rem 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .appbar .icons { display: flex; gap: 0.45rem; opacity: 0.9; font-size: 0.7rem; }
+
+    .chips {
+      display: flex;
+      gap: 0.35rem;
+      padding: 0.55rem 0.6rem;
+      overflow: hidden;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .chip {
+      flex: 0 0 auto;
+      padding: 0.22rem 0.45rem;
+      border-radius: 99px;
+      border: 1px solid #ddd;
+      font-size: 0.58rem;
+      color: #555;
+      background: #fff;
+    }
+
+    .chip.on {
+      border-color: #673ab7;
+      color: #673ab7;
+      background: #f3e8ff;
+    }
+
+    .doc {
+      margin: 0.45rem 0.55rem;
+      padding: 0.55rem 0.6rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+      border: 1px solid #eee;
+    }
+
+    .doc-top {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .tag {
+      font-size: 0.52rem;
+      padding: 0.1rem 0.28rem;
+      border-radius: 3px;
+      background: #eee;
+      color: #555;
+      font-weight: 600;
+    }
+
+    .tag.warn { background: #fff3e0; color: #e65100; }
+
+    .doc-name {
+      font-size: 0.7rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .doc-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.62rem;
+      color: #666;
+    }
+
+    .doc-meta b { color: #111; font-size: 0.68rem; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      margin-top: 0.3rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 8px;
+      font-size: 0.52rem;
+      font-weight: 600;
+    }
+
+    .pill.green { background: #e8f5e9; color: #2e7d32; }
+    .pill.cat { background: rgba(103, 58, 183, 0.12); color: #673ab7; }
+
+    .fab {
+      position: absolute;
+      right: 1.15rem;
+      bottom: 1.15rem;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+      background: #673ab7;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 14px rgba(103, 58, 183, 0.4);
+      z-index: 2;
+    }
+
+    .detail-head {
+      padding: 0.85rem 0.75rem 0.6rem;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .detail-head .store {
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin: 0.2rem 0;
+    }
+
+    .detail-head .sub {
+      font-size: 0.62rem;
+      color: #666;
+    }
+
+    .status-row {
+      display: flex;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .item-line {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.35rem;
+      padding: 0.45rem 0.75rem;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.62rem;
+    }
+
+    .item-line .name { font-weight: 600; }
+    .item-line .qty { color: #777; font-size: 0.55rem; }
+    .item-line .val { font-weight: 700; }
+
+    .total-bar {
+      margin-top: auto;
+      padding: 0.7rem 0.75rem;
+      background: #fff;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 0.78rem;
+    }
+
+    .scan-body {
+      flex: 1;
+      background: #111;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .scan-frame {
+      width: 68%;
+      aspect-ratio: 1;
+      border: 2px solid rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 0 999px rgba(0,0,0,0.45);
+      position: relative;
+    }
+
+    .scan-frame::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 42%;
+      height: 2px;
+      background: #7c4dff;
+      box-shadow: 0 0 12px #7c4dff;
+      animation: scan 1.8s ease-in-out infinite;
+    }
+
+    .scan-hint {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 0.75rem;
+      right: 0.75rem;
+      text-align: center;
+      color: #fff;
+      font-size: 0.65rem;
+      opacity: 0.9;
+    }
+
+    @keyframes scan {
+      0%, 100% { top: 18%; }
+      50% { top: 78%; }
+    }
+
     @media (max-width: 860px) {
       .hero-grid,
       .flow,
       .download-box,
-      .feature {
+      .feature,
+      .phones {
         grid-template-columns: 1fr;
       }
       .hero { align-items: start; padding-top: 2rem; min-height: auto; }
       .feature-code { padding-top: 0; }
       .receipt { margin-top: 0.5rem; max-width: 420px; }
+      .phone { transform: none !important; width: min(280px, 100%); }
+      .phone-card:nth-child(2) .phone { transform: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -391,7 +670,7 @@
         <p class="lede">Seus cupons fiscais reunidos, baixados e organizados — NFC-e e NF-e no celular.</p>
         <div class="cta-row">
           <a class="btn" href="#baixar">Baixar para Android</a>
-          <a class="btn btn-ghost" href="#funcoes">Ver funções</a>
+          <a class="btn btn-ghost" href="#telas">Ver telas</a>
         </div>
       </div>
 
@@ -412,6 +691,111 @@
       </aside>
     </div>
   </header>
+
+  <section id="telas" class="mockups">
+    <div class="wrap">
+      <h2 class="section-title">Como o app aparece no celular</h2>
+      <p class="section-lead">Lista, detalhe do cupom e leitura do QR Code — o fluxo do dia a dia.</p>
+
+      <div class="phones">
+        <figure class="phone-card">
+          <div class="phone" aria-hidden="true">
+            <div class="screen">
+              <div class="appbar">
+                <span>MinhasNotas</span>
+                <span class="icons">⋮</span>
+              </div>
+              <div class="chips">
+                <span class="chip on">Mar/2026</span>
+                <span class="chip">Nota Legal</span>
+                <span class="chip">Categoria</span>
+              </div>
+              <div class="doc">
+                <div class="doc-top">
+                  <span class="tag">NFC-e</span>
+                  <span class="doc-name">Mercadinho do Lago</span>
+                </div>
+                <div class="doc-meta"><b>R$ 86,40</b><span>12/03 · 8 itens</span></div>
+                <span class="pill green">✓ Nota Legal Ok</span>
+                <span class="pill cat">Alimentação</span>
+              </div>
+              <div class="doc">
+                <div class="doc-top">
+                  <span class="tag">NF-e</span>
+                  <span class="doc-name">Farmácia Central</span>
+                </div>
+                <div class="doc-meta"><b>R$ 54,90</b><span>10/03 · 3 itens</span></div>
+                <span class="pill cat">Saúde</span>
+              </div>
+              <div class="doc">
+                <div class="doc-top">
+                  <span class="tag warn">NFC-e</span>
+                  <span class="doc-name">Padaria Bela Vista</span>
+                </div>
+                <div class="doc-meta"><b>R$ 27,50</b><span>09/03 · Pendente</span></div>
+              </div>
+              <div class="fab">+</div>
+            </div>
+          </div>
+          <figcaption>Lista de documentos</figcaption>
+        </figure>
+
+        <figure class="phone-card">
+          <div class="phone" aria-hidden="true">
+            <div class="screen">
+              <div class="appbar">
+                <span>← Detalhes</span>
+                <span class="icons">↗ ⋮</span>
+              </div>
+              <div class="detail-head">
+                <div class="sub">NFC-e · autorizada</div>
+                <div class="store">Mercadinho do Lago</div>
+                <div class="sub">CNPJ 04.059.113/0001-13</div>
+                <div class="status-row">
+                  <span class="pill green">✓ Nota Legal</span>
+                  <span class="pill cat">Alimentação</span>
+                </div>
+              </div>
+              <div class="item-line">
+                <div><div class="name">Banana prata KG</div><div class="qty">0,350 KG × 8,99</div></div>
+                <div class="val">3,15</div>
+              </div>
+              <div class="item-line">
+                <div><div class="name">Café torrado 500g</div><div class="qty">1 UN × 28,90</div></div>
+                <div class="val">28,90</div>
+              </div>
+              <div class="item-line">
+                <div><div class="name">Leite integral 1L</div><div class="qty">2 UN × 5,49</div></div>
+                <div class="val">10,98</div>
+              </div>
+              <div class="item-line">
+                <div><div class="name">Pão francês</div><div class="qty">0,420 KG × 18,90</div></div>
+                <div class="val">7,94</div>
+              </div>
+              <div class="total-bar"><span>Total</span><span>R$ 86,40</span></div>
+            </div>
+          </div>
+          <figcaption>Detalhe do cupom</figcaption>
+        </figure>
+
+        <figure class="phone-card">
+          <div class="phone" aria-hidden="true">
+            <div class="screen">
+              <div class="appbar">
+                <span>← Ler QR Code</span>
+                <span class="icons">⚡</span>
+              </div>
+              <div class="scan-body">
+                <div class="scan-frame"></div>
+                <div class="scan-hint">Aponte para o QR Code da NFC-e</div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Leitor de QR Code</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
   <section id="como">
     <div class="wrap">
