@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MinhasNotas — e-mail confirmado</title>
+  <style>
+    :root {
+      --bg: #f4f2f8;
+      --card: #ffffff;
+      --text: #1f1630;
+      --muted: #6b6280;
+      --accent: #5e35b1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #ebe4ff 0%, transparent 45%),
+        linear-gradient(160deg, var(--bg), #efeaf7 60%, #e7eef5);
+    }
+    main {
+      width: min(440px, 100%);
+      background: var(--card);
+      padding: 36px 28px;
+      border: 1px solid #ddd4ec;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    p {
+      margin: 0 0 14px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .ok {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 10px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1b5e20;
+      background: #e8f5e9;
+    }
+    .brand {
+      margin-top: 22px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="ok">E-mail confirmado</div>
+    <h1>Tudo certo</h1>
+    <p>Sua conta do <strong>MinhasNotas</strong> foi confirmada.</p>
+    <p>Abra o app no celular e faça login com o mesmo e-mail e senha.</p>
+    <p>Pode fechar esta página.</p>
+    <div class="brand">MinhasNotas</div>
+  </main>
+</body>
+</html>
