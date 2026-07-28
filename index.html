@@ -123,39 +123,19 @@
     }
     .btn-ghost:hover { background: rgba(10, 22, 40, 0.06); }
 
-    .hero-phone {
-      width: min(280px, 100%);
+    .hero-receipt {
+      width: min(320px, 100%);
       justify-self: end;
       margin-inline: auto 0;
-      background: #111827;
-      border-radius: 28px;
-      padding: 10px;
-      box-shadow:
-        0 24px 48px rgba(10, 22, 40, 0.22),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-      position: relative;
       animation: slideIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+      filter: drop-shadow(0 22px 36px rgba(10, 22, 40, 0.22));
+      transform: rotate(1.5deg);
     }
 
-    .hero-phone::before {
-      content: "";
-      position: absolute;
-      top: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 28%;
-      height: 8px;
-      background: #020617;
-      border-radius: 99px;
-      z-index: 3;
-    }
-
-    .hero-phone img {
+    .hero-receipt img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 20px;
-      background: #fafafa;
     }
 
     /* —— SECTIONS —— */
@@ -391,7 +371,7 @@
       }
       .hero { align-items: start; padding-top: 2rem; min-height: auto; }
       .feature-code { padding-top: 0; }
-      .hero-phone { justify-self: start; margin: 0.5rem auto 0; width: min(260px, 100%); }
+      .hero-receipt { justify-self: start; margin: 0.5rem auto 0; width: min(280px, 100%); transform: none; }
       .phone { transform: none !important; width: min(280px, 100%); }
       .phone-card:nth-child(2) .phone { transform: none; }
     }
@@ -416,9 +396,9 @@
         </div>
       </div>
 
-      <div class="hero-phone">
-        <img src="./screens/detalhe.png" alt="Tela Detalhes do MinhasNotas com cupom NFC-e, emitente e Nota Legal" width="390" height="844" />
-      </div>
+      <figure class="hero-receipt">
+        <img src="./screens/cupom_amarelo.png" alt="Exemplo de cupom fiscal DANFE NFC-e em papel amarelo com QR Code e Nota Legal Ok" width="420" height="630" />
+      </figure>
     </div>
   </header>
 
